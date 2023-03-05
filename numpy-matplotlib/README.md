@@ -47,6 +47,7 @@ Example chart:
 * Similar to first version, but it takes arguments using argparse
 * You can type multiple values for variance, standard deviation and mean
 Example:
+
 ```commandline
 py main.py -s 1 1.5 2 -u 4
 py main.py -s 1.5 -u 3 4 5
