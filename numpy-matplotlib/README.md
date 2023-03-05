@@ -23,6 +23,7 @@ third_task()
 ## First version
 * Takes user parameters from console
 * You can only type one value of each parameter
+
 Example:
 ```commandline
 Type variation: 0
