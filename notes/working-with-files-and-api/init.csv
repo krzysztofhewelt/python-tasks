@@ -1,0 +1,18 @@
+key,name,description,unit,type,round
+accX,"Przyspieszenie X","Wartość skuteczna przyspieszenia drgań w osi X",m/s²,float,3
+accY,"Przyspieszenie Y","Wartość skuteczna przyspieszenia drgań w osi Y",m/s²,float,3
+accZ,"Przyspieszenie Z","Wartość skuteczna przyspieszenia drgań w osi Z",m/s²,float,3
+accRms,"True RMS Przyspieszenie","Wartość skuteczna przyspieszenia drgań",m/s²,float,3
+accLow,"Low true RMS Przyspieszenie","Wypadkowa wartość skuteczna przyspieszenia drgań o niskich częstotliwościach",m/s²,float,3
+accHigh,"High true RMS Przyspieszenie","Wypadkowa wartość skuteczna przyspieszenia drgań o wysokich częstotliwościach",m/s²,float,3
+accPeak,"Impuls Przyspieszenie","Maksymalna wartość chwilowa przyspieszenia drgań",m/s²,float,3
+accFreq,"Częstotliwość Przyspieszenie","Częstotliwość ważona sumy FFT dla przyspieszenia",Hz,int,0
+speedX,"Prędkość X","Wartość skuteczna prędkości drgań w osi X",m/s²,float,4
+speedY,"Prędkość Y","Wartość skuteczna prędkości drgań w osi Y",m/s²,float,4
+speedZ,"Prędkość Z","Wartość skuteczna prędkości drgań w osi Z",m/s²,float,4
+speedRms,"True RMS Prędkość","Wartość skuteczna prędkości drgań",m/s²,float,4
+speedLow,"Low true RMS Prędkość","Wypadkowa wartość skuteczna prędkości drgań o niskich częstotliwościach",m/s²,float,4
+speedHigh,"High true RMS Prędkość","Wypadkowa wartość skuteczna prędkości drgań o wysokich częstotliwościach",m/s²,float,4
+speedPeak,"Impuls Prędkość","Maksymalna wartość chwilowa prędkości drgań",m/s²,float,4
+speedFreq,"Częstotliwość Prędkość","Częstotliwość ważona sumy FFT dla prędkości",Hz,int,0
+temp,Temperatura,"Wartość temperatury w pobliżu czujnika drgań",°C,float,2

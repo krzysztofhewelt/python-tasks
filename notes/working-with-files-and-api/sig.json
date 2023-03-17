@@ -1,0 +1,430 @@
+{
+"shake1_accX": {
+"name": "Przyspieszenie X",
+"description": "Wartość skuteczna przyspieszenia drgań w osi X",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake1_accY": {
+"name": "Przyspieszenie Y",
+"description": "Wartość skuteczna przyspieszenia drgań w osi Y",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake1_accZ": {
+"name": "Przyspieszenie Z",
+"description": "Wartość skuteczna przyspieszenia drgań w osi Z",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake1_accRms": {
+"name": "True RMS Przyspieszenie",
+"description": "Wartość skuteczna przyspieszenia drgań",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake1_accLow": {
+"name": "Low true RMS Przyspieszenie",
+"description": "Wypadkowa wartość skuteczna przyspieszenia drgań o niskich częstotliwościach",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake1_accHigh": {
+"name": "High true RMS Przyspieszenie",
+"description": "Wypadkowa wartość skuteczna przyspieszenia drgań o wysokich częstotliwościach",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake1_accPeak": {
+"name": "Impuls Przyspieszenie",
+"description": "Maksymalna wartość chwilowa przyspieszenia drgań",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake1_accFreq": {
+"name": "Częstotliwość Przyspieszenie",
+"description": "Częstotliwość ważona sumy FFT dla przyspieszenia",
+"unit": "Hz",
+"type": "int",
+"round": "0"
+},
+"shake1_speedX": {
+"name": "Prędkość X",
+"description": "Wartość skuteczna prędkości drgań w osi X",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake1_speedY": {
+"name": "Prędkość Y",
+"description": "Wartość skuteczna prędkości drgań w osi Y",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake1_speedZ": {
+"name": "Prędkość Z",
+"description": "Wartość skuteczna prędkości drgań w osi Z",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake1_speedRms": {
+"name": "True RMS Prędkość",
+"description": "Wartość skuteczna prędkości drgań",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake1_speedLow": {
+"name": "Low true RMS Prędkość",
+"description": "Wypadkowa wartość skuteczna prędkości drgań o niskich częstotliwościach",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake1_speedHigh": {
+"name": "High true RMS Prędkość",
+"description": "Wypadkowa wartość skuteczna prędkości drgań o wysokich częstotliwościach",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake1_speedPeak": {
+"name": "Impuls Prędkość",
+"description": "Maksymalna wartość chwilowa prędkości drgań",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake1_speedFreq": {
+"name": "Częstotliwość Prędkość",
+"description": "Częstotliwość ważona sumy FFT dla prędkości",
+"unit": "Hz",
+"type": "int",
+"round": "0"
+},
+"shake1_temp": {
+"name": "Temperatura",
+"description": "Wartość temperatury w pobliżu czujnika drgań",
+"unit": "°C",
+"type": "float",
+"round": "2"
+},
+"shake2_accX": {
+"name": "Przyspieszenie X",
+"description": "Wartość skuteczna przyspieszenia drgań w osi X",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake2_accY": {
+"name": "Przyspieszenie Y",
+"description": "Wartość skuteczna przyspieszenia drgań w osi Y",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake2_accZ": {
+"name": "Przyspieszenie Z",
+"description": "Wartość skuteczna przyspieszenia drgań w osi Z",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake2_accRms": {
+"name": "True RMS Przyspieszenie",
+"description": "Wartość skuteczna przyspieszenia drgań",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake2_accLow": {
+"name": "Low true RMS Przyspieszenie",
+"description": "Wypadkowa wartość skuteczna przyspieszenia drgań o niskich częstotliwościach",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake2_accHigh": {
+"name": "High true RMS Przyspieszenie",
+"description": "Wypadkowa wartość skuteczna przyspieszenia drgań o wysokich częstotliwościach",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake2_accPeak": {
+"name": "Impuls Przyspieszenie",
+"description": "Maksymalna wartość chwilowa przyspieszenia drgań",
+"unit": "m/s²",
+"type": "float",
+"round": "3"
+},
+"shake2_accFreq": {
+"name": "Częstotliwość Przyspieszenie",
+"description": "Częstotliwość ważona sumy FFT dla przyspieszenia",
+"unit": "Hz",
+"type": "int",
+"round": "0"
+},
+"shake2_speedX": {
+"name": "Prędkość X",
+"description": "Wartość skuteczna prędkości drgań w osi X",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake2_speedY": {
+"name": "Prędkość Y",
+"description": "Wartość skuteczna prędkości drgań w osi Y",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake2_speedZ": {
+"name": "Prędkość Z",
+"description": "Wartość skuteczna prędkości drgań w osi Z",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake2_speedRms": {
+"name": "True RMS Prędkość",
+"description": "Wartość skuteczna prędkości drgań",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake2_speedLow": {
+"name": "Low true RMS Prędkość",
+"description": "Wypadkowa wartość skuteczna prędkości drgań o niskich częstotliwościach",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake2_speedHigh": {
+"name": "High true RMS Prędkość",
+"description": "Wypadkowa wartość skuteczna prędkości drgań o wysokich częstotliwościach",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake2_speedPeak": {
+"name": "Impuls Prędkość",
+"description": "Maksymalna wartość chwilowa prędkości drgań",
+"unit": "m/s²",
+"type": "float",
+"round": "4"
+},
+"shake2_speedFreq": {
+"name": "Częstotliwość Prędkość",
+"description": "Częstotliwość ważona sumy FFT dla prędkości",
+"unit": "Hz",
+"type": "int",
+"round": "0"
+},
+"shake2_temp": {
+"name": "Temperatura",
+"description": "Wartość temperatury w pobliżu czujnika drgań",
+"unit": "°C",
+"type": "float",
+"round": "2"
+},
+"inverter_freq": {
+"name": "Częstotliwość",
+"description": "Częstotliwość silnika",
+"unit": "Hz",
+"type": "float",
+"round": "2"
+},
+"inverter_amps": {
+"name": "Prąd",
+"description": "Prąd silnika",
+"unit": "A",
+"type": "float",
+"round": "2"
+},
+"inverter_volts": {
+"name": "Napięcie",
+"description": "Napięcie silnika",
+"unit": "V",
+"type": "float",
+"round": "1"
+},
+"inverter_power": {
+"name": "Moc",
+"description": "Moc silnika",
+"unit": "kW",
+"type": "float",
+"round": "2"
+},
+"inverter_load": {
+"name": "Obciążenie",
+"description": "Obciążenie silnika",
+"unit": "%",
+"type": "float",
+"round": "1"
+},
+"inverter_energy": {
+"name": "Energia",
+"description": "Zużycie energii silnika",
+"unit": "kWh",
+"type": "float",
+"round": "2"
+},
+"mtr_volts12": {
+"name": "Napięcie U1-U2",
+"description": "Napięcie miedzyfazowe U1-U2",
+"unit": "V",
+"type": "float",
+"round": "2"
+},
+"mtr_volts23": {
+"name": "Napięcie U2-U3",
+"description": "Napięcie miedzyfazowe U2-U3",
+"unit": "V",
+"type": "float",
+"round": "2"
+},
+"mtr_volts31": {
+"name": "Napięcie U3-U1",
+"description": "Napięcie miedzyfazowe U3-U1",
+"unit": "V",
+"type": "float",
+"round": "2"
+},
+"mtr_voltsAvg": {
+"name": "Napięcie AVG",
+"description": "Uśrednione napięcie silnika",
+"unit": "V",
+"type": "float",
+"round": "2"
+},
+"mtr_amps1": {
+"name": "Prąd I1",
+"description": "Prąd przepływający przez żyłę I1",
+"unit": "A",
+"type": "float",
+"round": "2"
+},
+"mtr_amps2": {
+"name": "Prąd I2",
+"description": "Prąd przepływający przez żyłę I2",
+"unit": "A",
+"type": "float",
+"round": "2"
+},
+"mtr_amps3": {
+"name": "Prąd I3",
+"description": "Prąd przepływający przez żyłę I3",
+"unit": "A",
+"type": "float",
+"round": "2"
+},
+"mtr_ampsAvg": {
+"name": "Prąd AVG",
+"description": "Uśredniony prąd z żył I1, I2, I3",
+"unit": "A",
+"type": "float",
+"round": "2"
+},
+"mtr_ptPower": {
+"name": "Moc czynna",
+"description": "Moc czynna w obwodzie",
+"unit": "W",
+"type": "float",
+"round": "1"
+},
+"mtr_qtPower": {
+"name": "Moc bierna",
+"description": "Moc bierna w obwodzie",
+"unit": "W",
+"type": "float",
+"round": "1"
+},
+"mtr_stPower": {
+"name": "Moc pozorna",
+"description": "Moc pozorna w obwodzie",
+"unit": "VA",
+"type": "float",
+"round": "1"
+},
+"mtr_PFT": {
+"name": "Wsp. mocy",
+"description": "Współczynnik mocy",
+"unit": null,
+"type": "float",
+"round": "3"
+},
+"main_tempOut": {
+"name": "Otoczenie",
+"description": "Temperatura otoczenia silnika głównego",
+"unit": "°C",
+"type": "float",
+"round": "2",
+"group": "Silnik główny, Temperatura"
+},
+"main_tempShaft": {
+"name": "Wał",
+"description": "Temperatura silnika głównego od strony wału",
+"unit": "°C",
+"type": "float",
+"round": "2",
+"group": "Silnik główny, Temperatura"
+},
+"main_tempFan": {
+"name": "Wentylator",
+"description": "Temperatura silnika od strony wentylatora",
+"unit": "°C",
+"type": "float",
+"round": "2",
+"group": "Silnik główny, Temperatura"
+},
+"main_tempBox": {
+"name": "Puszka",
+"description": "Temperatura silnika wewnątrz puszki połączeniowej",
+"unit": "°C",
+"type": "float",
+"round": "2",
+"group": "Silnik główny, Temperatura"
+},
+"main_tempWind1": {
+"name": "Uzwojenie 1",
+"description": "Temperatura uzwojenia 1 silnika głównego",
+"unit": "°C",
+"type": "float",
+"round": "2",
+"group": "Silnik główny, Temperatura"
+},
+"main_tempWind2": {
+"name": "Uzwojenie 2",
+"description": "Temperatura uzwojenia 2 silnika głównego",
+"unit": "°C",
+"type": "float",
+"round": "2",
+"group": "Silnik główny, Temperatura"
+},
+"main_tempWind3": {
+"name": "Uzwojenie 3",
+"description": "Temperatura uzwojenia 3 silnika głównego",
+"unit": "°C",
+"type": "float",
+"round": "2",
+"group": "Silnik główny, Temperatura"
+},
+"main_speedPickup": {
+"name": "Prędkość",
+"description": "Pomierzona prędkość",
+"unit": "obr/min",
+"type": "float",
+"round": "1",
+"group": "Silnik główny"
+}
+}
