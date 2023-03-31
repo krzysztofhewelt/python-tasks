@@ -159,16 +159,16 @@ class MainApplication:
             try:
                 start_date = datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
             except ValueError:
-                errors += "- Start time is not valid date!"
+                errors += "- Start time is not valid date!\n"
 
         if stop_time:
             try:
                 stop_date = datetime.strptime(stop_time, "%Y-%m-%d %H:%M:%S")
             except ValueError:
-                errors += "- Stop time is not valid date!"
+                errors += "- Stop time is not valid date!\n"
 
         if start_date and stop_date and start_date > stop_date:
-            errors += "Start time must be less or equal to stop time"
+            errors += "- Start time must be less or equal to stop time\n"
 
         if errors:
             messagebox.showerror('Error', errors)
