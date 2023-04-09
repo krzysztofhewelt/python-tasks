@@ -1,50 +1,45 @@
-from datetime import datetime
-from functools import partial
 from tkinter import *
 from tkinter import messagebox
 from tkinter.ttk import Combobox
-from matplotlib import pyplot as plt
-
-import pandas as pd
-
 from conn import Database
+from matplotlib import pyplot as plt
+import pandas as pd
+from datetime import datetime
+from functools import partial
 
 
 class Validator:
-
-    def validate_types_of_measurements(self, temperature, humidity, voltage):
+    @staticmethod
+    def validate_types_of_measurements(temperature, humidity, voltage):
         if not temperature and not humidity and not voltage:
-            return False
-            self.errors += "- You must choose at least one type of measurement\n"
+            raise ValueError("You must choose at least one type of measurement.")
 
         return True
 
-    def check_device_id(self, device_name):
+    @staticmethod
+    def check_device_id(device_name):
         if Devices.get_device_id(device_name) is None:
-            return False
-            self.errors += "- Device not found\n"
+            raise ValueError("Device not found.")
 
         return True
 
-    def check_start_date(self, start):
+    @staticmethod
+    def check_start_date(start):
         if start:
             try:
-                datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
-                return True
+                return datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
             except ValueError:
-                return False
-                self.errors += "- Start time is not valid date!\n"
+                raise ValueError("Start time is not valid date.")
 
         return None
 
-    def check_stop_date(self, stop):
+    @staticmethod
+    def check_stop_date(stop):
         if stop:
             try:
-                datetime.strptime(stop, "%Y-%m-%d %H:%M:%S")
-                return True
+                return datetime.strptime(stop, "%Y-%m-%d %H:%M:%S")
             except ValueError:
-                return False
-                self.errors += "- Stop time is not valid date!\n"
+                raise ValueError("Stop time is not valid date.")
 
         return None
 
@@ -52,22 +47,30 @@ class Validator:
         validated_start = self.check_start_date(start)
         validated_stop = self.check_stop_date(stop)
 
-        if validated_start is False or validated_stop is False:
-            return False
-
-        if self.check_start_date(start) and self.check_stop_date(stop):
-            start_date = datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
-            stop_date = datetime.strptime(stop, "%Y-%m-%d %H:%M:%S")
-
-            if start_date and stop_date and start_date > stop_date:
-                return False
-                self.errors += "- Start time must be less or equal to stop time\n"
+        if validated_start and validated_stop and validated_start > validated_stop:
+            raise ValueError("Start time must be less or equal to stop time.")
 
         return True
 
     def validate_all(self, device_name, temperature, humidity, voltage, start, stop):
-        return self.validate_types_of_measurements(temperature, humidity, voltage) and self.check_device_id(
-            device_name) and self.validate_dates(start, stop)
+        errors = ""
+
+        try:
+            self.validate_types_of_measurements(temperature, humidity, voltage)
+        except ValueError as e:
+            errors += str(e) + "\n"
+
+        try:
+            self.check_device_id(device_name)
+        except ValueError as e:
+            errors += str(e) + "\n"
+
+        try:
+            self.validate_dates(start, stop)
+        except ValueError as e:
+            errors += str(e) + "\n"
+
+        return errors
 
 
 class Devices:
@@ -77,13 +80,9 @@ class Devices:
         self.conn = Database()
         self.get_devices_from_database()
 
-    def get_devices_from_database(self):
-        devices = self.conn.fetch("SELECT id, name FROM devices")
-        for device in devices:
-            self.devices[device[1]] = device[0]
-
-    def get_device_names_list(self):
-        return list(self.devices.keys())
+    @staticmethod
+    def get_device_names_list():
+        return list(Devices.devices.keys())
 
     @staticmethod
     def get_device_id(name):
@@ -92,7 +91,8 @@ class Devices:
         except KeyError:
             return None
 
-    def make_data_columns_list(self, temperature, humidity, voltage):
+    @staticmethod
+    def make_data_columns_list(temperature, humidity, voltage):
         columns = ['time']
 
         if temperature:
@@ -106,27 +106,28 @@ class Devices:
 
         return columns
 
+    def get_devices_from_database(self):
+        devices = self.conn.fetch("SELECT id, name FROM devices")
+        for device in devices:
+            Devices.devices[device[1]] = device[0]
+
     def device_probes_from_database(self, device_name, temperature, humidity, voltage, start, stop):
-        print(device_name)
         dev_id = self.get_device_id(str(device_name))
-        start_time = start
-        stop_time = stop
         columns = self.make_data_columns_list(temperature, humidity, voltage)
         columns_joined = ','.join(columns)
 
         query = f"SELECT {columns_joined} FROM data WHERE device_id = {dev_id} "
 
-        if start_time:
-            query += f"AND time >= '{start_time}'"
+        if start:
+            query += f"AND time >= '{start}'"
 
-        if stop_time:
-            query += f"AND time <= '{stop_time}'"
+        if stop:
+            query += f"AND time <= '{stop}'"
 
         data = self.conn.fetch(query)
         df = pd.DataFrame(data, columns=columns)
         if df.empty:
             messagebox.showinfo("No data", "There is nothing to show")
-            return
 
         return df
 
@@ -136,9 +137,9 @@ class MainApplication:
         self.master = master
         self.master.geometry("500x250")
         self.master.title("IoT Visualizer")
+        self.master.resizable(False, False)
 
         self.devices = Devices()
-
         self.make_controls()
 
     def make_controls(self):
@@ -171,24 +172,28 @@ class MainApplication:
         devices_list.pack()
 
         submit_button = Button(self.master, text='Display chart',
-                               command=partial(self.test, device, temperature, humidity, voltage,
+                               command=partial(self.validate_and_get_data, device, temperature, humidity, voltage,
                                                entry_start, entry_stop),
-                               width=20, height=5)
+                               width=20, height=3)
         submit_button.pack()
 
-    def test(self, device, temperature, humidity, voltage, entry_start, entry_stop):
+    def validate_and_get_data(self, device, temperature, humidity, voltage, entry_start, entry_stop):
         validate = Validator()
-        if not validate.validate_all(device.get(), temperature.get(), humidity.get(), voltage.get(), entry_start.get(),
-                                     entry_stop.get()):
-            messagebox.showerror('Error', 'some errors')
+        validate_errors = validate.validate_all(device.get(), temperature.get(), humidity.get(), voltage.get(),
+                                                entry_start.get(),
+                                                entry_stop.get())
+
+        if validate_errors:
+            messagebox.showerror('Error', validate_errors)
             return
 
         df = self.devices.device_probes_from_database(device.get(), temperature.get(), humidity.get(), voltage.get(),
                                                       entry_start.get(), entry_stop.get())
         self.draw_chart(df)
 
-    def draw_chart(self, df):
-        if not df:
+    @staticmethod
+    def draw_chart(df):
+        if df.empty:
             return
 
         plt.rcParams["figure.figsize"] = (16, 9)
@@ -221,7 +226,7 @@ class MainApplication:
             i += 1
 
         axs[0, 0].set_title('Data visualization')
-        plt.subplots_adjust(hspace=.0)  # add some space between plots
+        plt.subplots_adjust(hspace=.0)  # remove space between plots
         plt.show()
 
 
